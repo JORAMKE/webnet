@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 3000;
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
