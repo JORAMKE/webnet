@@ -281,6 +281,100 @@
     transition: all 0.5s ease;
   }
   
+/* Gallery section structure style */
+/* Gallery section structure style */
+.gallery {
+  padding: 50px 70px;
+}
+
+.gallery .gallery-items-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery .gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery .gallery-item .item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gallery .gallery-item:hover .item-overlay {
+  opacity: 1;
+}
+
+.gallery .gallery-item .item-overlay .item-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.gallery .gallery-item .item-overlay .item-info h3 {
+  font-size: var(--font-size-18);
+  margin-bottom: 10px;
+}
+
+.gallery .gallery-item .item-overlay .item-info p {
+  font-size: var(--font-size-14);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery {
+    padding: 20px;
+  }
+
+  .gallery .gallery-items-group {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .gallery .gallery-item .item-overlay .item-info h3 {
+    font-size: var(--font-size-16);
+  }
+
+  .gallery .gallery-item .item-overlay .item-info p {
+    font-size: var(--font-size-12);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery .gallery-items-group {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .gallery .gallery-item .item-overlay .item-info h3 {
+    font-size: var(--font-size-14);
+  }
+
+  .gallery .gallery-item .item-overlay .item-info p {
+    font-size: var(--font-size-10);
+  }
+}
+
   :is(.about, .resume, .portfolio, .blog, .contact).active {
     top: 0;
     transform: scale(1);
